@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+void cmmdc(int n,int &f){
+    if(n>f){
+        n-=f;
+        cmmdc(n,f);
+    }
+    if(n<f){
+        f-=n;
+        cmmdc(n,f);
+    }
+}
+int main()
+{
+    int x;
+    int f;
+    cin>>x>>f;
+    cmmdc(x,f);
+    cout<<f;
+    return 0;
+}
